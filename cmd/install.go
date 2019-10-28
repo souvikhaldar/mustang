@@ -13,14 +13,9 @@ var install = &cobra.Command{
 	Short: "install node_exporter on the machine",
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Installing node_Exporter on : ", runtime.GOOS)
-		res,err := exec.Command("/bin/sh", "-c", "sudo apt-get install prometheus-node-exporter").Output()
-		if err != nil{
-			fmt.Println(err)
-			return
+		c := exec.Command("/bin/sh", "-c", "sudo apt-get install prometheus-node-exporter")
+		if err := c.Run(); err != nil {
+			fmt.Println("Error in installing mustang: ", err)
 		}
-		fmt.Println(res)
-		// if err := c.Run(); err != nil {
-		// 	fmt.Println("Error in installing mustang: ", err)
-		// }
 	},
 }
