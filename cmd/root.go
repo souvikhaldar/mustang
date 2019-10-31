@@ -17,6 +17,6 @@ var RootCmd = &cobra.Command{
 func init() {
 	RootCmd.AddCommand(install)
 	RootCmd.AddCommand(config)
-	config.PersistentFlags().String("service", "", "full name of the systemd service to monitor. Eg.-  http-server.service")
+	config.PersistentFlags().String("collector", "--collector.systemd", "node_exporter collector. Example-  --collector.systemd Checkout- https://github.com/prometheus/node_exporter")
 	config.PersistentFlags().String("profile", "~/.profile", "path to the profile file. Eg.- ~/.profile, /root/svkhldr/.profile")
 }

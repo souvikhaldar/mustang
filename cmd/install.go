@@ -18,7 +18,7 @@ var install = &cobra.Command{
 			if err := c.Run(); err == nil {
 				return
 			}
-			
+
 		}
 	},
 }
